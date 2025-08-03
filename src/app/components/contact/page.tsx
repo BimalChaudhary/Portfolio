@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
         toast.error(res.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.error(error); // Fix for unused variable warning
+      console.error(error); // Using the error variable here to avoid ESLint warning
       toast.error("Network error. Please try again later.");
     }
   };
