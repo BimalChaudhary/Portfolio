@@ -2,21 +2,11 @@
 
 Welcome to my personal developer portfolio! This project showcases the work I've done, the skills I have, and the projects I've built.
 
-## 📸 Preview
-
-![Portfolio Screenshot](./screenshot.png)
-
-> 💡 Replace `screenshot.png` with an actual screenshot of your portfolio.
-
----
-
 ## 🛠️ Built With
 
 - **Next.js**
 - **TypeScript**
 - **Tailwind CSS**
-- **Framer Motion**
-- **Git & GitHub**
 
 ---
 
