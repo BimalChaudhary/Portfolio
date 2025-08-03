@@ -4,7 +4,7 @@ Hi! I'm Bimal Chaudhary, a passionate **Web Developer** with experience in build
 
 ## 🚀 Skills
 
-- 🌐 Frontend: HTML, CSS, JavaScript, React.js, Next.js, Tailwind CSS
+- 🌐 Frontend: HTML, CSS, JavaScript, TypeScript, React.js, Next.js, Tailwind CSS
 - 🛠️ Backend: Node.js, Express.js, MongoDB
 - 🧪 Testing: Jest, React Testing Library
 - ⚙️ Tools: Git, GitHub, VS Code, Postman
