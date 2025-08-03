@@ -26,8 +26,7 @@ const Contact: React.FC = () => {
 
     formData.append("access_key", "e10bf62b-46f8-47d4-afd4-d393169e6662");
 
-    const object = Object.fromEntries(formData.entries());
-    const json = JSON.stringify(object);
+    const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -41,12 +40,13 @@ const Contact: React.FC = () => {
 
       if (res.success) {
         toast.success(res.message || "Message sent successfully!");
-        event.currentTarget.reset(); // Reset form after success
+        event.currentTarget.reset();
       } else {
         toast.error(res.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      toast.error("Network error. Please try again.");
+      console.error(error); // Fix for unused variable warning
+      toast.error("Network error. Please try again later.");
     }
   };
 
@@ -105,11 +105,11 @@ const Contact: React.FC = () => {
           {/* Left Section */}
           <div className="md:w-1/2 space-y-6">
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-              Let's talk
+              Let&apos;s talk
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               I am currently available to take on new projects. Feel free to
-              send me a message about anything you'd like me to work on.
+              send me a message about anything you&apos;d like me to work on.
             </p>
 
             <div className="space-y-4">
