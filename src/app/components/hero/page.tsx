@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         Developer from Nepal.
       </h1>
       <p className="text-gray-700 dark:text-gray-300 max-w-xl mb-8">
-        Passionate about building full-stack web apps using <span className="text-blue-600">Next JS, MongoDB, Express,
+        Passionate about building full-stack web apps using <span className="text-blue-600">Next JS, Fast API, PostgresSQL, MongoDB, Express,
         React, and Node.js.</span>
       </p>
 
