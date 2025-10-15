@@ -2,46 +2,61 @@
 
 import React from "react";
 import Image from "next/image";
-import profileImg from "../../assets/profile_img.jpg";
 import Link from "next/link";
+import profileImg from "../../assets/profile_img.jpg";
 
 const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="flex flex-col items-center text-center py-16 px-4 bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="flex flex-col items-center justify-center text-center py-24 px-6 bg-white dark:bg-gray-900 transition-colors duration-500"
     >
-      <Image
-        src={profileImg}
-        alt="Bimal Chaudhary Profile"
-        width={180}
-        height={180}
-        className="rounded-full shadow-md mb-6 object-cover"
-        priority
-      />
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-        <span className="text-blue-600"> Bimal Chaudhary</span> <div>FULL STACK & MERN STACK</div>
-        Developer from Nepal.
+      {/* Profile Image with glow */}
+      <div className="relative mb-8">
+        <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <Image
+          src={profileImg}
+          alt="Bimal Chaudhary Profile"
+          width={190}
+          height={190}
+          className="relative rounded-full shadow-2xl ring-4 ring-blue-500/20 object-cover"
+          priority
+        />
+      </div>
+
+      {/* Name and Role */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">
+        Hi, I’m <span className="text-blue-600">Bimal Chaudhary</span>
       </h1>
-      <p className="text-gray-700 dark:text-gray-300 max-w-xl mb-8">
-        Passionate about building full-stack web apps using <span className="text-blue-600">Next JS, Fast API, PostgresSQL, MongoDB, Express,
-        React, and Node.js.</span>
+      <h2 className="text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300 mb-6 tracking-wide">
+        <span className="text-blue-600">Full Stack & MERN Stack Developer</span> from Nepal
+      </h2>
+
+      {/* Description */}
+      <p className="text-gray-700 dark:text-gray-300 max-w-2xl mb-10 text-base md:text-lg leading-relaxed">
+        Passionate about crafting scalable, high-performance web applications using{" "}
+        <span className="text-blue-600 font-semibold">
+          Next.js, FastAPI, PostgreSQL, MongoDB, Express, React,
+        </span>{" "}
+        and{" "}
+        <span className="text-blue-600 font-semibold">Node.js.</span> I focus on writing clean, maintainable code and delivering exceptional user experiences.
       </p>
 
-      <div className="flex gap-4">
+      {/* Action Buttons */}
+      <div className="flex flex-wrap justify-center gap-4">
         <Link
           href="/components/contact"
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
         >
-          Contact with
+          Contact Me
         </Link>
         <a
           href="https://drive.google.com/drive/folders/1ufuz6vUXSVYAjd_5i7rOBo75KdRXaiSa"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition"
+          className="border border-blue-600 text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white shadow-sm transition-all duration-300"
         >
-          My Resume
+          View Resume
         </a>
       </div>
     </section>
