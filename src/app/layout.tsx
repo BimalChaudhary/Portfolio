@@ -3,8 +3,8 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bimal Chaudhary — Full-stack Developer",
-  description: "Bimal Chaudhary is a full-stack developer building thoughtful, reliable web experiences from Nepal.",
+  title: "Portfolio",
+  description: "A personal Portfolio",
   icons: {
     icon: "/bimal.jpg",
   },

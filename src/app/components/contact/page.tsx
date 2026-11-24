@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
       <Navbar />
       <div
         id="contact"
-        className="px-5 py-16 md:px-16 md:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen"
+        className="md:px-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen"
       >
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">

@@ -2,35 +2,41 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import { DarkModeToogle } from "../darkModeToogle/DarkModeToogle";
 
-const links = [
-  ["/", "Home"],
-  ["/#selected-work", "Work"],
-  ["/#about", "About"],
-  ["/components/contact", "Contact"],
-] as const;
-
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+
+  const navLink = (path: string, label: string) => (
+    <Link
+      href={path}
+      className={`hover:text-blue-600 font-medium transition duration-200 ${
+        pathname === path
+          ? "text-blue-600 underline"
+          : "text-gray-800 dark:text-gray-100"
+      }`}
+    >
+      {label}
+    </Link>
+  );
+
   return (
-    <header className="site-header">
-      <nav className="page-shell nav-inner" aria-label="Main navigation">
-        <Link href="/" className="brand" onClick={() => setOpen(false)}><span className="brand-mark">B</span><span>Bimal<span className="brand-dot">.</span></span></Link>
-        <div className={`nav-links ${open ? "nav-links-open" : ""}`}>
-          {links.map(([href, label]) => {
-            const active = href === "/" ? pathname === "/" : href.startsWith("/#") ? pathname === "/" : pathname === href;
-            return <Link key={label} href={href} onClick={() => setOpen(false)} className={active ? "nav-link nav-link-active" : "nav-link"}>{label}</Link>;
-          })}
-          <div className="nav-mobile-theme"><DarkModeToogle /></div>
+    <nav className="bg-white text-center dark:bg-black shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
+        {/* Centered nav links */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
+          {navLink("/", "Home")}
+          {navLink("/components/about", "About")}
+          {navLink("/components/work", "Work")}
+          {navLink("/components/services", "Services")}
+          {navLink("/components/contact", "Contact")}
+          <DarkModeToogle />
         </div>
-        <div className="nav-actions"><Link href="/components/contact" className="nav-cta">Let’s talk <span>↗</span></Link><div className="nav-desktop-theme"><DarkModeToogle /></div></div>
-        <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X size={21} /> : <Menu size={21} />}</button>
-      </nav>
-    </header>
+
+        {/* Right side: Theme toggle or placeholder */}
+        <div>{/* Insert theme toggle component here */}</div>
+      </div>
+    </nav>
   );
 };
 
