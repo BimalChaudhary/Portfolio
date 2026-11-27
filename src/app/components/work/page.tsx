@@ -3,6 +3,7 @@
 import Image from "next/image";
 import mywork_data from "./mywork_data";
 import Navbar from "../navbar/page";
+import Link from "next/link";
 
 const WorkPage = () => {
   return (
@@ -20,11 +21,11 @@ const WorkPage = () => {
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
             >
               {/* Clickable Image */}
-              <a
-                href={item.w_img.src} // <- use .src for imported images
+              <Link
+                href={item.w_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block relative group"
+                className="block relative group overflow-hidden"
               >
                 <Image
                   src={item.w_img}
@@ -33,21 +34,24 @@ const WorkPage = () => {
                   height={300}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </a>
+              </Link>
 
               {/* Content */}
               <div className="p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   {item.w_title}
                 </h2>
-                <a
+                <Link
                   href={item.w_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium"
                 >
-                  View on GitHub
-                </a>
+                  {item.isLive && (
+                    <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                  )}
+                  {item.isLive ? "Live Link" : "View on GitHub"}
+                </Link>
               </div>
             </div>
           ))}
